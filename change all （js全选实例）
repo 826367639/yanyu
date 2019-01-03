@@ -1,0 +1,10 @@
+$("#checkAll").click(function(){
+    if(this.checked) {
+        $('[name="ids[]"]:checkbox:enabled').prop("checked", true);
+    } else {
+        $('[name="ids[]"]:checkbox:enabled').prop("checked", false);
+    }
+});
+
+
+<input type="checkbox" name="ids[]" value="{$row['id']}" {$row['status'] == 'sold' ? 'disabled' : ''}>
