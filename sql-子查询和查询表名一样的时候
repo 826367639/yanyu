@@ -1,0 +1,6 @@
+SELECT s.`sn`,s.`title`,cla.`title` as `college`,col.`title` as `class` 
+FROM `mb_university_core_students` as s 
+INNER JOIN `mb_university_core_classes`as cla 
+ON  s.`class`=cla.id  INNER JOIN `mb_university_core_colleges`as col 
+ON  s.`college`=col.id  
+WHERE (s.`id` IN (SELECT `role_id` FROM `mb_university_members` GROUP BY `role_id` HAVING  COUNT(`role_id`)>1))
