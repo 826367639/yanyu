@@ -1,0 +1,9 @@
+var clipboard = new Clipboard('.btn', {
+        text: function() {
+            var html = document.getElementById('test').innerHTML;
+            // 用正则替换
+            html = html.replace('aaa', '');
+            // 返回带html格式的内容
+            return html;
+        }
+    });
