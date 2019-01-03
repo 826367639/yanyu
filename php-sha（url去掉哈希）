@@ -1,0 +1,7 @@
+url = "{:AU('utility/jssdk')}";
+var pars = {};
+if(location.hash) {
+    pars.url = location.href.slice(0, -location.hash.length);
+} else {
+    pars.url = location.href;
+}
