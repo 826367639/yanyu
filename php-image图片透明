@@ -1,0 +1,11 @@
+$filename = $arr[$img[0]];
+list($width, $height) = getimagesize($filename);
+$newwidth = 120;
+$newheight = 120;
+$thumb = imagecreatetruecolor($newwidth, $newheight);
+$color = imagecolorallocate($thumb, 1000, 1000, 1000);
+imagefill($thumb, 0, 0, $color);
+imageColorTransparent($thumb, $color);
+$source = imagecreatefrompng($filename);
+imagecopyresized($thumb, $source, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+imagecopy($im,$thumb,90,510,0,0,$newwidth,$newheight);//返回布尔值
