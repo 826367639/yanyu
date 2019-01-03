@@ -1,0 +1,12 @@
+var n = 100;
+var moveDiv = function() {
+    var length = $('[name=length]').val();
+    $('.move').css('margin-top', n + 'px');
+    n -= 2;
+    if(n == -(length * 40) - 20) {
+        n = 100;
+    }
+    setTimeout(function() {
+        moveDiv();
+    }, 100);
+};
