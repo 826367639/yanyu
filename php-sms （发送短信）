@@ -1,0 +1,5 @@
+$config['corpid'] = 'heshenghang';
+$config['secret'] = 'heshenghang';
+$content = urlencode($content);
+$url = "http://101.200.29.88:8082/SendMT/SendMessage?CorpID={$config['corpid']}&Pwd={$config['secret']}&Cell=0088&Mobile={$phone}&Content={$content}";
+$cnt = Net::httpGet($url);
